@@ -1,5 +1,7 @@
 {
   "name": "Domodin",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
