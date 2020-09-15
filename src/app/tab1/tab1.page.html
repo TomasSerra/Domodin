@@ -13,7 +13,67 @@
       <ion-title size="large">Casa</ion-title>
     </ion-toolbar>
   </ion-header>
-  
+<div class="ion-padding">
+  <ion-text>
+  <h2 class="titulos">Living</h2>
+</ion-text>  
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="centrado">
+          <ion-button shape="round" class="boton_dispositivo" color="secondary" (click)="luz()"> 
+            <div *ngIf="luz_estado">
+               <img src="../assets/img/luz_on.png" class="iconos">
+            </div>
+            <div *ngIf="!luz_estado">
+              <img src="../assets/img/luz_off.png" class="iconos">
+           </div>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="centrado">
+          <ion-button shape="round" class="boton_dispositivo" color="secondary" (click)="aire()"> 
+            <div *ngIf="aire_estado">
+              <img src="../assets/img/aire_on.png" class="iconos">
+           </div>
+           <div *ngIf="!aire_estado">
+             <img src="../assets/img/aire_off.png" class="iconos">
+          </div>
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <div class="centrado">
+           <ion-button shape="round" class="boton_cortina" color="secondary" disabled="true"> 
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-button fill="clear" class="boton_flecha">
+                    <ion-icon slot="start" name="caret-down-outline" class="flechas" color="tertiary"></ion-icon>
+                  </ion-button>
+                </ion-col>
+                <ion-col>
+                  <img src="../assets/img/cortina.png" class="cortina">
+                </ion-col>
+                <ion-col>
+                  <ion-button fill="clear" class="boton_flecha">
+                    <ion-icon slot="end" name="caret-up-outline" class="flechas" color="tertiary"></ion-icon>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+           </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
 
