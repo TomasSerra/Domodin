@@ -22,7 +22,7 @@
     <ion-row>
       <ion-col>
         <div class="centrado">
-          <ion-button shape="round" class="boton_dispositivo" color="secondary" (click)="luz()"> 
+          <ion-button shape="round" class="boton_dispositivo" color="secondary" (click)="luz()" mode="ios"> 
             <div *ngIf="luz_estado">
                <img src="../assets/img/luz_on.png" class="iconos">
             </div>
@@ -34,7 +34,7 @@
       </ion-col>
       <ion-col>
         <div class="centrado">
-          <ion-button shape="round" class="boton_dispositivo" color="secondary" (click)="aire()"> 
+          <ion-button shape="round" class="boton_dispositivo" color="secondary" (click)="aire()" mode="ios"> 
             <div *ngIf="aire_estado">
               <img src="../assets/img/aire_on.png" class="iconos">
            </div>
@@ -48,19 +48,19 @@
     <ion-row class="ion-align-items-center">
       <ion-col>
         <div class="centrado">
-           <ion-button shape="round" class="boton_cortina" color="secondary" disabled="true"> 
+           <ion-button shape="round" class="boton_cortina" mode="ios"> 
             <ion-grid>
               <ion-row>
-                <ion-col>
-                  <ion-button fill="clear" class="boton_flecha">
+                <ion-col size="2" offset="-0.3">
+                  <ion-button fill="clear" class="boton_flecha" mode="ios">
                     <ion-icon slot="start" name="caret-down-outline" class="flechas" color="tertiary"></ion-icon>
                   </ion-button>
                 </ion-col>
-                <ion-col>
+                <ion-col size="5" offset="1.7">
                   <img src="../assets/img/cortina.png" class="cortina">
                 </ion-col>
-                <ion-col>
-                  <ion-button fill="clear" class="boton_flecha">
+                <ion-col size="2" offset="-1">
+                  <ion-button fill="clear" class="boton_flecha" mode="ios">
                     <ion-icon slot="end" name="caret-up-outline" class="flechas" color="tertiary"></ion-icon>
                   </ion-button>
                 </ion-col>
