@@ -11,6 +11,11 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Casa</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="recargar()">
+          <ion-icon name="refresh" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 <div class="ion-padding">
@@ -23,24 +28,28 @@
       <ion-col>
         <div class="centrado">
           <ion-button shape="round" class="boton_dispositivo" color="secondary" (click)="luz()" mode="ios"> 
-            <div *ngIf="luz_estado">
-               <img src="../assets/img/luz_on.png" class="iconos">
-            </div>
-            <div *ngIf="!luz_estado">
+            <div *ngFor="let dispositivo of dispositivos">
+              <div *ngIf="dispositivo.luz">
+                <img src="../assets/img/luz_on.png" class="iconos">
+              </div>
+            <div *ngIf="!dispositivo.luz">
               <img src="../assets/img/luz_off.png" class="iconos">
            </div>
+          </div>
           </ion-button>
         </div>
       </ion-col>
       <ion-col>
         <div class="centrado">
           <ion-button shape="round" class="boton_dispositivo" color="secondary" (click)="aire()" mode="ios"> 
-            <div *ngIf="aire_estado">
-              <img src="../assets/img/aire_on.png" class="iconos">
-           </div>
-           <div *ngIf="!aire_estado">
-             <img src="../assets/img/aire_off.png" class="iconos">
-          </div>
+            <div *ngFor="let dispositivo of dispositivos">
+            <div *ngIf="dispositivo.aire">
+               <img src="../assets/img/aire_on.png" class="iconos">
+            </div>
+            <div *ngIf="!dispositivo.aire">
+               <img src="../assets/img/aire_off.png" class="iconos">
+            </div>
+            </div>
           </ion-button>
         </div>
       </ion-col>
@@ -48,7 +57,7 @@
     <ion-row class="ion-align-items-center">
       <ion-col>
         <div class="centrado">
-           <ion-button shape="round" class="boton_cortina" mode="ios"> 
+           <ion-button shape="round" class="boton_cortina" mode="ios" color="secondary"> 
             <ion-grid>
               <ion-row>
                 <ion-col size="2" offset="-0.3">
