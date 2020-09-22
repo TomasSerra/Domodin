@@ -10,6 +10,7 @@ export class Tab1Page {
 
   luz_estado: boolean;
   aire_estado: boolean;
+  cortina_estado: number = 10;
   dispositivos: any [];
   
   constructor(public afDB: AngularFireDatabase,) {
@@ -25,7 +26,8 @@ export class Tab1Page {
     {
       this.afDB.list('/ESP32/').push({
       luz: this.luz_estado,
-      aire: this.aire_estado
+      aire: this.aire_estado,
+      cortina: this.cortina_estado
       });
     }
     else
@@ -57,6 +59,30 @@ export class Tab1Page {
     this.dispositivos[0].aire = this.aire_estado;
   }
 
+  cortina(valor: number)
+  {
+    
+    if(this.cortina_estado == 10 && valor == 0)
+    {
+      this.cortina_estado = 5;
+    }
+    else if (this.cortina_estado == 5 && valor == 0)
+    {
+      this.cortina_estado = 0;
+    }
+    else if (this.cortina_estado == 0 && valor == 1)
+    {
+      this.cortina_estado = 5;
+    }
+    else if (this.cortina_estado == 5 && valor == 1)
+    {
+      this.cortina_estado = 10;
+    }
+
+    this.afDB.database.ref("/ESP32/" + this.dispositivos[0].key + "/cortina").set(this.cortina_estado);
+    this.dispositivos[0].cortina = this.cortina_estado;
+  }
+
   getDatos()
   {
     this.afDB.list('/ESP32/').snapshotChanges(['child_added', 'child_removed']).subscribe(actions => {
@@ -65,7 +91,8 @@ export class Tab1Page {
         this.dispositivos.push({
           key: action.key,
           luz: action.payload.exportVal().luz, 
-          aire: action.payload.exportVal().aire
+          aire: action.payload.exportVal().aire,
+          cortina: action.payload.exportVal().aire
         });
       });
     });
@@ -76,6 +103,7 @@ export class Tab1Page {
     this.getDatos();
     this.aire_estado = this.dispositivos[0].aire;
     this.luz_estado = this.dispositivos[0].luz;
+    this.cortina_estado = this.dispositivos[0].cortina;
   }
 
 
