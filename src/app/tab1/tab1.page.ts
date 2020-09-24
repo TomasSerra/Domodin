@@ -8,6 +8,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class Tab1Page {
 
+  habitacion: number = 0;
   luz_estado: boolean;
   aire_estado: boolean;
   cortina_estado: number = 10;
