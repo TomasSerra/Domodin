@@ -1,0 +1,17 @@
+<ion-content>
+  
+  <ion-title class="titulo">Iniciar sesion</ion-title>
+  
+  <ion-item class="nombreusuario">
+    <ion-label position="floating">Nombre de usuario</ion-label>
+    <ion-input [(ngModel)]=user></ion-input>
+  </ion-item>
+  
+  <ion-item class="contrasena">
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [(ngModel)]=password type="password"></ion-input>
+  </ion-item>
+
+  <ion-button class="ingresar" expand="block" (click)="ingresar()">Ingresar</ion-button>
+
+</ion-content>
