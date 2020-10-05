@@ -1,25 +1,21 @@
-<ion-content>
+<ion-content class="blanco">
   
   <div class="centrado">
-    <ion-item class="nombreusuario">
+    <img src="../assets/icon/icono.png" class= icono/>
+    <ion-item class="nombreusuario" class="blanco">
         <ion-label position="floating">Nombre de usuario</ion-label>
         <ion-input [(ngModel)]=user></ion-input>
       </ion-item>
       
-      <ion-item class="contrasena">
+      <ion-item class="contrasena" class="blanco">
         <ion-label position="floating">Contraseña</ion-label>
         <ion-input [(ngModel)]=password type="password"></ion-input>
       </ion-item>
 
       <div class="boton_centrado">
-        <ion-button class="ingresar" (click)="ingresar()">Ingresar</ion-button>
+        <ion-button class="ingresar" expand="block" (click)="ingresar()">INGRESAR</ion-button>
       </div>
-
   </div>
-
-  <img src="../assets/icon/icono.png" class= icono/>
-
-
 
 </ion-content>
 

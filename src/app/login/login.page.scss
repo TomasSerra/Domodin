@@ -21,13 +21,14 @@
     padding-left: 5%;
     padding-right: 5%;
     margin-top: 30px;
-    width: 300px;
-    --background: rgb(171, 118, 118);
+    --background: rgb(113, 113, 113);
+    --background-activated: rgb(176, 176, 176);
 }
 
 .centrado
 {
-    margin-top: 100px;
+    margin-top: 150px;
+    text-align: center;
 }
 
 .boton_centrado
@@ -37,6 +38,12 @@
 
 .icono
 {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: auto;
+}
+
+.blanco
+{
+    --background: white;
+    color: black;
 }
