@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-tab1',
@@ -9,58 +10,53 @@ import { AngularFireDatabase } from '@angular/fire/database';
 export class Tab1Page {
 
   habitacion: number = 0;
-  luz_estado: boolean;
-  aire_estado: boolean;
+  luz_estado_liv: boolean = false;
+  aire_estado_liv: boolean = false;
+  luz_estado_dor: boolean = false;
+  aire_estado_dor: boolean = false;
   cortina_estado: number = 10;
   dispositivos: any [];
+  user_id: string;
   
-  constructor(public afDB: AngularFireDatabase,) {
-   this.getDatos();
+  constructor(public afDB: AngularFireDatabase, private AFauth : AngularFireAuth) {
+   this.getData();
+   this.AFauth.authState.subscribe(user => {
+     if(user) this.user_id = user.uid
+   })
   }
 
-  luz()
+  luz(room: string)
   {
-    
-    this.luz_estado = !this.luz_estado
-
-    if(this.dispositivos[0] == null)
+    if(room == "living")
     {
-      this.afDB.list('/ESP32/').push({
-      luz: this.luz_estado,
-      aire: this.aire_estado,
-      cortina: this.cortina_estado
-      });
+      this.luz_estado_liv = !this.luz_estado_liv;
+      this.afDB.database.ref("/Users/" + this.user_id + "/" + room + "/luz" ).set(this.luz_estado_liv);
     }
-    else
+    else if(room == "dormitorio")
     {
-      this.afDB.database.ref("/ESP32/" + this.dispositivos[0].key + "/luz").set(this.luz_estado);
+      this.luz_estado_dor = !this.luz_estado_dor;
+      this.afDB.database.ref("/Users/" + this.user_id + "/" + room + "/luz" ).set(this.luz_estado_dor);
     }
-
-    this.dispositivos[0].luz = this.luz_estado;
-    
   }
 
-  aire()
+  aire(room: string)
   {
+    if(room == "living")
+    {
+      this.aire_estado_liv = !this.aire_estado_liv;
+      this.afDB.database.ref("/Users/" + this.user_id + "/" + room + "/aire" ).set(this.aire_estado_liv);
+    }
+    else if(room == "dormitorio")
+    {
+      this.aire_estado_dor = !this.aire_estado_dor;
+      this.afDB.database.ref("/Users/" + this.user_id + "/" + room + "/aire" ).set(this.aire_estado_dor);
+    }
     
-    this.aire_estado = !this.aire_estado;
-
-    if(this.dispositivos[0] == null)
-    {
-      this.afDB.list('/ESP32/').push({
-      luz: this.luz_estado,
-      aire: this.aire_estado
-      });
-    }
-    else
-    {
-      this.afDB.database.ref("/ESP32/" + this.dispositivos[0].key + "/aire").set(this.aire_estado);
-    }
-
-    this.dispositivos[0].aire = this.aire_estado;
+    
+    
   }
 
-  cortina(valor: number)
+  cortina(valor: number, room: string)
   {
     
     if(this.cortina_estado == 10 && valor == 0)
@@ -80,13 +76,12 @@ export class Tab1Page {
       this.cortina_estado = 10;
     }
 
-    this.afDB.database.ref("/ESP32/" + this.dispositivos[0].key + "/cortina").set(this.cortina_estado);
-    this.dispositivos[0].cortina = this.cortina_estado;
+    this.afDB.database.ref("/Users/" + this.user_id + "/" + room + "/cortina").set(this.cortina_estado);
   }
 
-  getDatos()
+  getData()
   {
-    this.afDB.list('/ESP32/').snapshotChanges(['child_added', 'child_removed']).subscribe(actions => {
+    this.afDB.list("/Users/" + this.user_id).snapshotChanges(['child_added', 'child_removed']).subscribe(actions => {
       this.dispositivos = [];
       actions.forEach(action => {
         this.dispositivos.push({
@@ -97,14 +92,12 @@ export class Tab1Page {
         });
       });
     });
+
   }
 
   recargar()
   {
-    this.getDatos();
-    this.aire_estado = this.dispositivos[0].aire;
-    this.luz_estado = this.dispositivos[0].luz;
-    this.cortina_estado = this.dispositivos[0].cortina;
+    this.getData();
   }
 
 

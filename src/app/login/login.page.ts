@@ -10,8 +10,10 @@ import { Router } from '@angular/router'
 export class LoginPage implements OnInit {
   user : string;
   password :string;
+  user_id: string;
+
   constructor(private authService : AuthService, public router : Router) { 
-  
+    
   }
 
   ingresar(){
