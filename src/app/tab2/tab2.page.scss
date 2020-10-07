@@ -1,0 +1,53 @@
+.boton_fondo
+{
+    margin-top: 20px;
+    width: 300px; 
+    height: 130px; 
+    text-align: center;
+}
+
+.centrado
+{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.titulos
+{
+    font-weight: bold;
+    opacity: 50%;
+}
+
+.luz
+{
+    color: rgb(255, 241, 137);
+    --bar-background-active: rgb(255, 241, 137);
+}
+
+.aire
+{
+    color: rgb(168, 232, 255);
+    --bar-background-active: rgb(168, 232, 255);
+}
+
+.cortina_texto
+{
+    font-weight: bold;
+    margin-bottom: 10%;
+    font-size: 150%;
+    opacity: 50%;
+}
+
+.texto
+{
+    font-weight: bold;
+    font-size: 150%;
+    opacity: 50%;
+}
+
+.boton_cortina
+{
+    --indicator-color: rgb(200, 162, 233);
+}
+
+
