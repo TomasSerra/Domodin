@@ -27,7 +27,6 @@ export class AuthService {
     return new Promise((resolve, rejected) =>{
       this.AFauth.signInWithEmailAndPassword(email, password).then(res =>{
         resolve(res);
-        this.AFauth.setPersistence("none").then().catch();
       }).catch(err => rejected(err))
     });
   }
