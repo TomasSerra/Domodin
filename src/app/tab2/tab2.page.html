@@ -44,7 +44,7 @@
           <ion-text class="texto">Temperatura</ion-text>
         </ion-row>
         <ion-row>
-          <ion-range min="25" max="30" step="1" value="26" pin class="aire">
+          <ion-range [(ngModel)]=aire min="25" max="30" step="1" value={{aire}} pin class="aire">
           <ion-icon slot="start" size="small" class="aire" name="thermometer-outline"></ion-icon>
           <ion-icon slot="end" class="aire" name="thermometer-outline"></ion-icon>
         </ion-range>
@@ -59,7 +59,7 @@
           <ion-text class="cortina_texto">Cortina automática</ion-text>
         </ion-row>
         <ion-row>
-          <ion-segment value="off">
+          <ion-segment [(ngModel)]=cortina value={{cortina}}>
             <ion-segment-button value="off" class="boton_cortina">
               <ion-label>OFF</ion-label>
             </ion-segment-button>
