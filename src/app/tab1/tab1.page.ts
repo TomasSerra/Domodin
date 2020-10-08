@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase, snapshotChanges } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
-
+import { AuthService } from '../servicios/auth.service'
+import { Router } from '@angular/router'
 var luz_l = false;
 var aire_l = false;
 var luz_d = false;
@@ -23,7 +24,7 @@ export class Tab1Page {
   dispositivos: any [];
   user_id: string;
   
-  constructor(public afDB: AngularFireDatabase, private AFauth : AngularFireAuth) {
+  constructor(public afDB: AngularFireDatabase, private AFauth : AngularFireAuth, private authService : AuthService, public router : Router) {
     this.AFauth.authState.subscribe(user => {
       if(user) this.user_id = user.uid
     })
@@ -106,9 +107,11 @@ export class Tab1Page {
     this.aire_estado_dor = aire_d;
   }
 
-  logout()
+  signout()
   {
-
+    this.authService.logout().then(res =>{
+      this.router.navigate(['/login']);
+    }).catch(err => alert('Error'))
   }
 
 
