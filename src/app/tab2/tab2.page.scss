@@ -1,7 +1,15 @@
 .boton_fondo
 {
-    margin-top: 20px;
-    width: 300px; 
+    margin-top: 3%;
+    width: 90%; 
+    height: 130px; 
+    text-align: center;
+}
+
+.boton
+{
+    margin-top: 10%;
+    width: 90%; 
     height: 130px; 
     text-align: center;
 }
@@ -12,10 +20,11 @@
     margin-top: 5%;
 }
 
-.titulos
+
+.header
 {
     font-weight: bold;
-    opacity: 50%;
+    text-align: center;
 }
 
 .luz
@@ -35,14 +44,12 @@
     font-weight: bold;
     margin-bottom: 10%;
     font-size: 150%;
-    opacity: 50%;
 }
 
 .texto
 {
     font-weight: bold;
     font-size: 150%;
-    opacity: 50%;
 }
 
 .boton_cortina

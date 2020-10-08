@@ -1,8 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Casa
-    </ion-title>
+    <div class="centrado">
+      <ion-title class="titulos">Casa</ion-title>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button (click)="recargar()">
+        <ion-icon name="refresh" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-text>Salir</ion-text>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -11,17 +21,12 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Casa</ion-title>
-      <ion-buttons slot="end">
-        <ion-button (click)="recargar()">
-          <ion-icon name="refresh" slot="icon-only"></ion-icon>
-        </ion-button>
-      </ion-buttons>
     </ion-toolbar>
   </ion-header>
-<div class="ion-padding">
+
   <ion-text>
   <h2 class="titulos">Living</h2>
-</ion-text>  
+  </ion-text>  
 
   <ion-grid>
     <ion-row>
@@ -80,9 +85,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</div>
 
-<div class= "ion-padding">
   <ion-text>
     <h2 class="titulos">
       Dormitorio
@@ -148,7 +151,6 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</div>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
