@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase, snapshotChanges } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
-
+var luz = false;
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -97,7 +97,11 @@ export class Tab1Page {
 
   recargar()
   {
-    this.getData();
+    this.afDB.database.ref("/Users/" + this.user_id + "/" + "living" + "/luz").on('value', function(snapshot){
+      console.log(snapshot.val());
+      luz = snapshot.val();
+    });
+    this.luz_estado_liv = luz;
   }
 
 
