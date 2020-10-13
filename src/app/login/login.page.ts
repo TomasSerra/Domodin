@@ -13,15 +13,11 @@ export class LoginPage implements OnInit {
   user_id: string;
 
   constructor(private authService : AuthService, public router : Router) { 
-    if(this.authService.comprobacion()==true){
-      this.router.navigate(['/tabs/tabs/tab1']);
-    }
   }
 
   ingresar(){
     this.authService.login(this.user, this.password).then(res =>{
       this.router.navigate(['/tabs/tabs/tab1']);
-      this.authService.comprobacion();
     }).catch(err => alert('Los datos son incorrectos'))
   }
 
