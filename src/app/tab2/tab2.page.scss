@@ -4,6 +4,7 @@
     width: 90%; 
     height: 130px; 
     text-align: center;
+    --background-hover: var(--background);
 }
 
 .boton
@@ -12,6 +13,7 @@
     width: 90%; 
     height: 130px; 
     text-align: center;
+    --background-hover: var(--background);
 }
 
 .centrado

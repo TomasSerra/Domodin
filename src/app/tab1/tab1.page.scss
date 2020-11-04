@@ -5,12 +5,14 @@
 .boton_dispositivo{ //caracteristicas de los botones de luz/aire
     width: 130px; 
     height: 130px; 
+    --background-hover: var(--background);
 }
 
 .boton_cortina{
     margin-top: 20px;
     width: 300px; 
     height: 130px; 
+    --background-hover: var(--background);
 }
 
 .titulos{
@@ -35,4 +37,5 @@
 .boton_flecha
 {
     margin-top: 20px;
+    --background-hover: var(--background);
 }

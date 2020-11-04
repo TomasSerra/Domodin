@@ -30,7 +30,7 @@
             <ion-text class="texto">Iluminación</ion-text>
           </ion-row>
           <ion-row>
-            <ion-range [(ngModel)]=luz min="0" max="3" step="1" value={{luz}} snaps class="luz">
+            <ion-range [(ngModel)]=luz min="0" max="3" step="1" value={{luz}} snaps class="luz" mode="ios">
                 <ion-icon slot="start" size="small" class="luz" name="sunny"></ion-icon>
                 <ion-icon slot="end" class="luz" name="sunny"></ion-icon>
             </ion-range>
@@ -44,7 +44,7 @@
           <ion-text class="texto">Temperatura</ion-text>
         </ion-row>
         <ion-row>
-          <ion-range [(ngModel)]=aire min="25" max="30" step="1" value={{aire}} pin class="aire">
+          <ion-range [(ngModel)]=aire min="25" max="30" step="1" value={{aire}} pin class="aire" mode="ios">
           <ion-icon slot="start" size="small" class="aire" name="thermometer-outline"></ion-icon>
           <ion-icon slot="end" class="aire" name="thermometer-outline"></ion-icon>
         </ion-range>
