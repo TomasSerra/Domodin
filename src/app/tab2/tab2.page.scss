@@ -31,14 +31,14 @@
 
 .luz
 {
-    color: rgb(255, 241, 137);
-    --bar-background-active: rgb(255, 241, 137);
+    color: rgb(208, 193, 82);
+    --bar-background-active: rgb(208, 193, 82);
 }
 
 .aire
 {
-    color: rgb(168, 232, 255);
-    --bar-background-active: rgb(168, 232, 255);
+    color: rgb(31, 167, 216);
+    --bar-background-active: rgb(31, 167, 216);
 }
 
 .cortina_texto
@@ -56,7 +56,19 @@
 
 .boton_cortina
 {
-    --indicator-color: rgb(200, 162, 233);
+    --indicator-color: rgb(164, 96, 223);
+}
+
+.boton_emergencia
+{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 90%; 
+    height: 130px; 
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    --background-hover: var(--background);
 }
 
 

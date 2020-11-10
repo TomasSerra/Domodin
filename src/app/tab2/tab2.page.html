@@ -61,14 +61,19 @@
         <ion-row>
           <ion-segment [(ngModel)]=cortina value={{cortina}}>
             <ion-segment-button value="off" class="boton_cortina">
-              <ion-label>OFF</ion-label>
+              <ion-label color="secondary">OFF</ion-label>
             </ion-segment-button>
             <ion-segment-button value="on" class="boton_cortina">
-              <ion-label>ON</ion-label>
+              <ion-label color="secondary">ON</ion-label>
             </ion-segment-button>
           </ion-segment>
         </ion-row>
       </ion-grid>
+    </ion-button>
+
+    <ion-button shape="round" class="boton_emergencia" color="danger"  mode="ios" href="tel:911">
+      EMERGENCIA
+      <ion-icon name="medical-outline"></ion-icon>
     </ion-button>
     
     
