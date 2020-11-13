@@ -18,13 +18,13 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAglN0W2MQ10b8prqxeVv_49a-fQHbLW-A",
-  authDomain: "domotica-120ce.firebaseapp.com",
-  databaseURL: "https://domotica-120ce.firebaseio.com",
-  projectId: "domotica-120ce",
-  storageBucket: "domotica-120ce.appspot.com",
-  messagingSenderId: "889692156725",
-  appId: "1:889692156725:web:f7d15c59f3b36b2c08927c"
+  apiKey: "AIzaSyCbxggyUxLQUEYvW1CE1nJA-9IGH0EqWzY",
+  authDomain: "billetera-214a6.firebaseapp.com",
+  databaseURL: "https://billetera-214a6.firebaseio.com",
+  projectId: "billetera-214a6",
+  storageBucket: "billetera-214a6.appspot.com",
+  messagingSenderId: "1028852374555",
+  appId: "1:1028852374555:web:bcf81bb879c2f019b1acbe"
 };
 
 @NgModule({

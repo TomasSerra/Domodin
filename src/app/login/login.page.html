@@ -1,9 +1,18 @@
 <ion-content class="blanco">
   
   <div class="centrado">
-    <img src="../assets/icon/icono_inicio.png" class= icono/>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="8">
+          <h2 style="font-size: 300%; font-weight: bold; margin-left: 5%; text-align: right;">Billetera</h2>
+        </ion-col>
+        <ion-col size="3">
+          <ion-icon src="../assets/icon/billetera.svg" style="font-size: 400%; margin-top: 20%; margin-right: 20%; color: green;"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-item class="nombreusuario" class="blanco">
-        <ion-label position="floating">Usuario</ion-label>
+        <ion-label position="floating">Mail</ion-label>
         <ion-input [(ngModel)]=user type="email" autofocus="false"></ion-input>
       </ion-item>
       
@@ -13,7 +22,11 @@
       </ion-item>
 
       <div class="boton_centrado">
-        <ion-button class="ingresar" expand="block" (click)="ingresar()">INGRESAR</ion-button>
+        <ion-button style="--background-hover: #2b8539"class="ingresar" color="primary" expand="block" (click)="ingresar()">INGRESAR</ion-button>
+      </div>
+
+      <div class="boton_centrado">
+        <ion-button fill="clear" style="text-align: center; margin-left: 10%; margin-right: 10%; margin-top: 5%;"  expand="block" (click)="registrar()">REGISTRARSE</ion-button>
       </div>
   </div>
 

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button fill=clear defaultHref="login">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="centrado">
+    <ion-item style="margin-top: 30%;">
+        <ion-label position="floating">Mail</ion-label>
+        <ion-input [(ngModel)]=mail type="email" autofocus="false"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [(ngModel)]=password type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Repita constraseña</ion-label>
+        <ion-input [(ngModel)]=cpassword type="password"></ion-input>
+      </ion-item>
+
+      <div class="boton_centrado">
+        <ion-button style="margin-top: 10%; margin-left: 0%; margin-right: 0%;" color="secondary" expand="full" (click)="registrar()">REGISTRARSE</ion-button>
+      </div>
+      </div>
+</ion-content>

@@ -1,157 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <div class="centrado">
-      <ion-title class="titulos">Casa</ion-title>
-    </div>
-    <ion-buttons slot="end">
-      <ion-button (click)="recargar()">
-        <ion-icon name="refresh" slot="icon-only"></ion-icon>
+    <ion-buttons slot="start" >
+      <ion-button fill=clear (click)="salir()">
+        Salir
       </ion-button>
     </ion-buttons>
-    <ion-buttons slot="start">
-      <ion-button (click)="signout()">
-        <ion-text>Salir</ion-text>
-      </ion-button>
-    </ion-buttons>
+    <ion-title style="margin-left: 20%">
+      Billetera
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Casa</ion-title>
+      <ion-title size="large">Billetera</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-text>
-  <h2 class="titulos">Living</h2>
-  </ion-text>  
-
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <div class="centrado">
-          <ion-button shape="round" class="boton_dispositivo" color="secondary" (click)="luz('living')" mode="ios"> 
-            
-            <div *ngIf="this.luz_estado_liv">
-                <img src="../assets/img/luz_on.png" class="iconos">
-            </div>
-            <div *ngIf="!this.luz_estado_liv">
-              <img src="../assets/img/luz_off.png" class="iconos">
-            </div>
-
-          </ion-button>
-        </div>
-      </ion-col>
-      <ion-col>
-        <div class="centrado">
-          <ion-button shape="round" class="boton_dispositivo" color="secondary" (click)="aire('living')" mode="ios"> 
-            
-            <div *ngIf="this.aire_estado_liv">
-               <img src="../assets/img/aire_on.png" class="iconos">
-            </div>
-            <div *ngIf="!this.aire_estado_liv">
-               <img src="../assets/img/aire_off.png" class="iconos">
-            </div>
-          
-          </ion-button>
-        </div>
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-align-items-center">
-      <ion-col>
-        <div class="centrado">
-           <ion-button shape="round" class="boton_cortina" mode="ios" color="secondary"> 
-            <ion-grid>
-              <ion-row>
-                <ion-col size="2" offset="-0.3">
-                  <ion-button fill="clear" class="boton_flecha" mode="ios" (click)="cortina(0, 'living')">
-                    <ion-icon slot="start" name="caret-down-outline" class="flechas" color="tertiary"></ion-icon>
-                  </ion-button>
-                </ion-col>
-                <ion-col size="5" offset="1.7">
-                  <img src="../assets/img/cortina.png" class="cortina">
-                </ion-col>
-                <ion-col size="2" offset="-1">
-                  <ion-button fill="clear" class="boton_flecha" mode="ios" (click)="cortina(1, 'living')">
-                    <ion-icon slot="end" name="caret-up-outline" class="flechas" color="tertiary"></ion-icon>
-                  </ion-button>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-           </ion-button>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <ion-text>
-    <h2 class="titulos">
-      Dormitorio
-    </h2>
-  </ion-text>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <div class= "centrado">
-          <ion-button shape= "round" class= "boton_dispositivo" color= "secondary" (click)= "luz('dormitorio')" mode="ios">
-            
-              <div *ngIf= "this.luz_estado_dor">
-                <img src= "../assets/img/luz_on.png" class= "iconos">
-              </div>
-              <div *ngIf= "!this.luz_estado_dor">
-                <img src= "../assets/img/luz_off.png" class= "iconos">
-              </div>
-            
-          </ion-button>
-        </div>
-      </ion-col>
-      <ion-col>
-        <div class= "centrado">
-          <ion-button shape= "round" class= "boton_dispositivo" color= "secondary" (click)= "aire('dormitorio')" mode= "ios">
-              
-            <div *ngIf= "this.aire_estado_dor">
-                <img src= "../assets/img/aire_on.png" class= "iconos">
-            </div>
-            <div *ngIf= "!this.aire_estado_dor">
-                <img src= "../assets/img/aire_off.png" class= "iconos">
-            </div>
-
-          </ion-button>
-        </div>
-      </ion-col>
-    </ion-row>
-    <ion-row class= "ion-align-items-center">
-      <ion-col>
-        <div class= "centrado">
-          <ion-button shape= "round" class= "boton_cortina" color= "secondary" mode= "ios">
-            <ion-grid>
-              <ion-row>
-                <ion-col size= "2" offset= "-0.3"> <!--primera flecha-->
-                  <ion-button fill= "clear" class= "boton_flecha" (click)= "cortina(0, 'dormitorio')" mode= "ios">
-                    <ion-icon slot= "start" name= "caret-down-outline" class= "flechas" color= "tertiary">
-                    </ion-icon>
-                  </ion-button>
-                </ion-col>
-                <ion-col size= "5" offset= "1.7"> <!--cortina-->
-                  <img src= "../assets/img/cortina.png" class= "cortina">
-                </ion-col>
-                <ion-col size= "2" offset= "-1"> <!--segunda flecha-->
-                  <ion-button fill= "clear" class= "boton_flecha" (click)= "cortina(1, 'dormitorio')" mode= "ios">
-                    <ion-icon slot= "end" name= "caret-up-outline" class= "flechas" color= "tertiary"> <!--PREGUNTAR-->>
-                    </ion-icon>
-                  </ion-button>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-button>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-card color="primary" class="card" mode="ios">
+    <ion-grid> 
+      <ion-row class="fila">
+        <ion-col>
+          <ion-card-title style="font-size: 300%;">$</ion-card-title>
+        </ion-col>
+        <ion-col class="columna">
+          <ion-card-title style="font-size: 300%;">{{pesos}}</ion-card-title>
+        </ion-col>
+      </ion-row>
+      <ion-row class="fila">
+        <ion-col>
+          <ion-card-title style="font-size: 300%;">USD</ion-card-title>
+        </ion-col>
+        <ion-col class="columna">
+          <ion-card-title style="font-size: 300%;">{{dolares}}</ion-card-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
-

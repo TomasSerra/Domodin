@@ -18,11 +18,11 @@
 .ingresar
 {
     text-align: center;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-top: 30px;
-    --background: rgb(113, 113, 113);
-    --background-activated: rgb(176, 176, 176);
+    --background: rgb(3 83 43);
+    --background-activated: #2b8539;
 }
 
 .centrado
@@ -44,6 +44,5 @@
 
 .blanco
 {
-    --background: white;
-    color: black;
+    --background: var(--background);
 }

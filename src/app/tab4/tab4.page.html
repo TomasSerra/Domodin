@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Cambio divisa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Cambio divisa</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <form (ngSubmit)="cambiar()">
+    <ion-item  style="font-size:200%; margin-top: 5%; --background: var(--background);">
+    <ion-input type="number" required="true" placeholder="Monto" style="text-align:center;" [(ngModel)]=cantPlata [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" style="margin-top: 5%; --background: var(--background);">
+      <ion-label>Cambiar a: </ion-label>
+    </ion-item>
+    <ion-segment value={{a}} class="fondo_segmento" [(ngModel)]=a [ngModelOptions]="{standalone: true}" mode="ios">
+      <ion-segment-button value="$" class="boton_segmento">
+        <div class="margenes_boton">
+          <ion-label>$</ion-label>
+        </div>
+      </ion-segment-button>
+      <ion-segment-button value="USD" class="boton_segmento">
+        <div class="margenes_boton">
+          <ion-label>USD</ion-label>
+        </div>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-segment value={{tipo}} class="fondo_segmento" [(ngModel)]=tipo [ngModelOptions]="{standalone: true}" mode="ios">
+      <ion-segment-button value="oficial" style="font-size: 75%; --indicator-color: rgba(24, 92, 48, 0.356);">
+        <div class="margenes_boton">
+          <ion-label>Oficial</ion-label>
+        </div>
+      </ion-segment-button>
+      <ion-segment-button value="blue" style="font-size: 75%; --indicator-color: rgba(24, 92, 48, 0.356);">
+        <div class="margenes_boton">
+          <ion-label>Blue</ion-label>
+        </div>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-segment value={{compra_venta}} class="fondo_segmento" [(ngModel)]=compra_venta [ngModelOptions]="{standalone: true}" mode="ios">
+      <ion-segment-button value="compra" style="font-size: 75%; --indicator-color: rgba(24, 92, 48, 0.356);">
+        <div class="margenes_boton">
+          <ion-label>Compra</ion-label>
+        </div>
+      </ion-segment-button>
+      <ion-segment-button value="venta" style="font-size: 75%; --indicator-color: rgba(24, 92, 48, 0.356);">
+        <div class="margenes_boton">
+          <ion-label>Venta</ion-label>
+        </div>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-item lines="none" style="font-size:250%; margin-top: 5%; margin-bottom: 5%; --background: var(--background); text-align: center; font-size: 200%;" >
+      <ion-label style="font-weight: bold;" *ngIf="peso">$ {{cambioTotal}}</ion-label>
+      <ion-label style="font-weight: bold;" *ngIf="!peso">USD {{cambioTotal}}</ion-label>
+    </ion-item>
+
+    <ion-button expand="block" type="submit"  color="primary" class="boton_enviar" style="font-weight: bold;" >Cambiar</ion-button>
+  </form>
+  
+
+
+
+
+</ion-content>

@@ -1,41 +1,16 @@
-.centrado{
-    text-align: center;
-  }
-
-.boton_dispositivo{ //caracteristicas de los botones de luz/aire
-    width: 130px; 
-    height: 130px; 
-    --background-hover: var(--background);
-}
-
-.boton_cortina{
-    margin-top: 20px;
-    width: 300px; 
-    height: 130px; 
-    --background-hover: var(--background);
-}
-
-.titulos{
-    font-weight: bold;
-    margin-left: 5%;
-}
-
-.iconos{
-    image-rendering: auto;
-}
-
-.cortina
+.columna
 {
-    width: 100px;
-    height: auto;
+    text-align: right;
 }
 
-.flechas{
-    font-size: 300%;
+.card
+{
+    position: relative;
+    top:25%;
 }
 
-.boton_flecha
+.fila
 {
     margin-top: 20px;
-    --background-hover: var(--background);
+    margin-bottom: 10px;
 }
